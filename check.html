@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <link rel="stylesheet" href="stuhome.css">
+    <style>
+        input[type=text],
+        input[type=Password]{
+            width: 18%;
+            padding: 7px 15px;
+            display: inline-block;
+            border: 5px solidc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            opacity: 0.9;
+        }
+
+        input[type=submit] {
+            background-color: rgb(66, 66, 66);
+            width: 17%;
+            color: white;
+            padding: 7px 10px;
+            border: 50px;
+            border-color: #ffffff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #302f2f;
+        }
+    </style>
+    <div id=wrapper>
+        <input type=checkbox> 
+        <div id=menu>
+            <i><a class="#dashboard" href="#dashboard" style="float: right;color:orange; font-size:29px;"><img src="HOdownload.png" style="background-size: cover;" height="35px" width="45px"></a></i>
+            <i><a href="#dbmanage" style="float: right;color:orange; font-size:29px;"><img src="DBdownload.png" style="background-size: cover;" height="35px" width="45px"></a></i>
+            <i><a href="#yourdetails" style="float: right;color:orange; font-size:29px;"><img src="PDdownload.png" style="background-size: cover;" height="40px" width="45px"></a></i>
+            <i><a href="#changepassword" style="float: right;color:orange; font-size:29px;"><img src="CPdownload.png" style="background-size: cover;" height="50px" width="45px"></a></i>
+            <i><a href="https://www.instagram.com/" style="float: right;color:orange; font-size:29px;"><img src="IGdownload.png" style="background-size: cover;" height="40px" width="40px"></a></i>
+            <i><a href="https://www.facebook.com/" style="float: right;color:orange; font-size:29px;"><img src="FBdownload.png" style="background-size: cover;" height="45px" width="45px"></a></i>
+            <i><a href="https://www.linkedin.com/" style="float: right;color:orange; font-size:29px;"><img src="LIdownload.png" style="background-size: cover;" height="35px" width="37px"></a></i>
+            <i><a href="https://www.twitter.com/" style="float: right;color:orange; font-size:29px;"><img src="TWdownload.png" style="background-size: cover;" height="40px" width="45px"></a></i>
+            <i><a href="#logout" style="float: right;color:orange; font-size:29px;"><img src="LGdownload.png" style="background-size: cover;" height="40px" width="40px"></a></i>
+        </div>
+        <div id=page>
+            <div class="back">
+                <div class="topnav">
+                    <br>
+                    <label style="color:white;font-size:36px; margin-left:40%; margin-top:10px">Secure IT</label>
+                </div>
+                <hr class="new1">
+                <div style="padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;  ">
+                    <table width="100%" height="100%" cellspacing="1" cellpadding="1">
+                        <?php  
+                            $sql5 = "SELECT * FROM ".$username.";";
+                            $result5 = mysqli_query($con, $sql5);
+                            while ($row5 = mysqli_fetch_assoc($result5)) {
+                        ?>
+                        <tr>
+                            <td style="padding: 16px;"><?php echo "<label></label><input type='text' value=".$row5['usernme']."  style='float: left;'>"; ?></td>
+                            <td style="padding: 16px;"><?php echo "<label></label><input type='text'  value=".$row5['passwrd']."  style='float: left;'>"; ?></td>
+                            <td style="padding: 16px;"><?php echo "<label></label><input type='text' value=".$row5['website']."  style='float: left;'>"; ?></td>
+                            <td style="padding: 16px;"><label></label><input type="submit" name="add1" id="add1" value="UPDATE" onclick="myFunction()"></td>
+                        </tr>
+                            <?php
+                                }
+                            ?>
+                        <tr>
+                            <td style="padding: 16px;"><label></label><input type="text" name="usr" placeholder="USERNAME" id='myInput' style="float: left;"></td>
+                            <td style="padding: 16px;"><label></label><input type="text" name="pss" placeholder="PASSWORD" id='myInput' style="float: left;"></td>
+                            <td style="padding: 16px;"><label></label><input type="text" name="web" placeholder="WEBSITE" id='myInput' style="float: left;"></td>
+                            <td style="padding: 16px;"><label></label><input type="submit" name="add1" id="add1" value="ADD" onclick="adddb()"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </script>
+    <script>
+function myFunction() {
+  alert("Hello World");
+}
+function adddb() {
+  alert("addddd");
+}
+</script>
+
+</body>
+</html>
