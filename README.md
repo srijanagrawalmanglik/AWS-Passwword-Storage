@@ -1,6 +1,6 @@
 # AWS-Passwword-Storage
 
-please visit http://ec2-13-233-214-56.ap-south-1.compute.amazonaws.com/ or http://13.233.214.56/ for the Live website
+please visit http://ec2-13-233-214-56.ap-south-1.compute.amazonaws.com/ or http://13.233.214.56/ for the Live website(validity uptil AWS free tier limit)
 
 Passwords are fundamental for information security. They are used as a
 first-line defense in securing almost all our electronic information,
